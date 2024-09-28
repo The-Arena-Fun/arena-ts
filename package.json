@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpm run --parallel dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pnpm build:server && pnpm build:web",
+    "build": "npm run build:server && npm run build:web",
     "build:server": "pnpm --filter server build",
     "build:web": "pnpm --filter web build"
   },
