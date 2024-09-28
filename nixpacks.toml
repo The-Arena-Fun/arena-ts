@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ['...', 'cowsay']
+
+[phases.build]
+cmds = ['pnpm build:server']
+
+[start]
+cmd = 'pnpm start:server'
