@@ -1,8 +1,4 @@
-[phases.setup]
-nixPkgs = ['...', 'cowsay']
+providers = ["node"]
 
-[phases.build]
-cmds = ['pnpm build:server']
-
-[start]
-cmd = 'pnpm start:server'
+[phases.install]
+cmds = ["npm install -g corepack", "corepack enable", "corepack prepare pnpm@9.1.0 --activate", "pnpm install"]
