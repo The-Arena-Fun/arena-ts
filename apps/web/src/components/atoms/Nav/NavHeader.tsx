@@ -19,7 +19,7 @@ export function NavHeader() {
       </Link>
       <div className="flex flex-row gap-x-4">
         <Balance />
-        <Wallet />
+        {/* <Wallet /> */}
       </div>
     </nav>
   );
