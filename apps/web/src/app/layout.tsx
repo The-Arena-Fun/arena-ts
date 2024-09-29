@@ -18,7 +18,7 @@ const protoMono = localFont({
 
 export const metadata: Metadata = {
   title: "The Arena",
-  description: "A PvP social trading game",
+  description: "Trading re-imagined",
 };
 
 export default function RootLayout({
