@@ -24,8 +24,8 @@ export function JoinGame() {
       <Image
         className="h-[100px] w-[100px]"
         src={BattleLogo}
-        alt={`battlelogo`
-        }
+        alt={`battlelogo`}
+        priority
       />
       < div className="w-full max-w-lg rounded-md border-2 border-[#28323C] p-6 flex flex-1 flex-col gap-y-4" >
         <Button className="flex flex-1 bg-[#6031C3] text-white py-4 hover:text-black"
@@ -51,7 +51,6 @@ export function JoinGame() {
         <Item heading="Duration" description="24 hrs" /> */}
         </div>
       </div >
-
     </div >
   )
 }
