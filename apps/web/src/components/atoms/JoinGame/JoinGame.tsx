@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import BattleLogo from '@/app/assets/logos/battlelogo.png'
+import Link from "next/link";
 
 export function JoinGame() {
   const router = useRouter()
@@ -51,6 +52,12 @@ export function JoinGame() {
         <Item heading="Duration" description="24 hrs" /> */}
         </div>
       </div >
+      <Link
+        target="_blank"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdmkgeIi-Rtrwk5ntlwOlSZYYaHdRDe37RT7IqL4ktE_rSL0A/viewform"
+      >
+        <p className="text-sm underline">Join waitlist</p>
+      </Link>
     </div >
   )
 }
