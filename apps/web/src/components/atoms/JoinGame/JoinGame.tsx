@@ -21,7 +21,7 @@ export function JoinGame() {
     //       alt={`battlelogo`}
     //     />
     //   </div>
-    <div className="flex flex-col gap-y-4 w-full items-center px-4">
+    <div className="flex flex-col gap-y-4 w-full items-center mx-4">
       <Image
         className="h-[100px] w-[100px]"
         src={BattleLogo}
