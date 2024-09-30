@@ -13,22 +13,14 @@ export function JoinGame() {
     router.push('/game')
   }
   return (
-    // <div className="flex flex-col gap-y-4 w-full">
-    //   <div className="flex justify-center items-center">
-    //     <Image
-    //       className="object-contain h-[100px] w-[100px]"
-    //       src={BattleLogo}
-    //       alt={`battlelogo`}
-    //     />
-    //   </div>
-    <div className="flex flex-col gap-y-4 w-full items-center mx-4">
+    <div className="flex flex-1 flex-col gap-y-4 w-full items-center">
       <Image
         className="h-[100px] w-[100px]"
         src={BattleLogo}
         alt={`battlelogo`}
         priority
       />
-      < div className="w-full max-w-lg rounded-md border-2 border-[#28323C] p-6 flex flex-1 flex-col gap-y-4" >
+      < div className="w-full sm:max-w-lg max-w-md rounded-md border-2 border-[#28323C] p-6 flex flex-1 flex-col gap-y-4" >
         <Button className="flex flex-1 bg-[#6031C3] text-white py-4 hover:text-black"
           onClick={onJoin}
           disabled
