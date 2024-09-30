@@ -35,13 +35,6 @@ export function JoinGame() {
           <Item heading="Mode" description="X" />
           <Seperator />
           <Item heading="Duration" description="X" />
-          {/* <Item heading="Wager" description="$10" />
-        <Seperator />
-        <Item heading="Trading" description="$50" />
-        <Seperator />
-        <Item heading="Game mode" description="First to 2x" />
-        <Seperator />
-        <Item heading="Duration" description="24 hrs" /> */}
         </div>
       </div >
       <Link
