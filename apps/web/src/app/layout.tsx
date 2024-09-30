@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <Providers>
           <NavHeader />
-          <div className="w-full px-8 flex flex-1">
+          <div className="w-full flex flex-1">
             {children}
           </div>
         </Providers>
