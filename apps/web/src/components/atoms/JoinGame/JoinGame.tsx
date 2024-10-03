@@ -57,7 +57,7 @@ export function JoinGame() {
         href="https://docs.google.com/forms/d/e/1FAIpQLSdmkgeIi-Rtrwk5ntlwOlSZYYaHdRDe37RT7IqL4ktE_rSL0A/viewform"
         className="btn"
       >
-        <p className="text-sm uppercase">Join waitlist</p>
+        <p className="text-sm uppercase">Apply waitlist</p>
       </Link>
       <div className="bottom">
         <div className="blob">
