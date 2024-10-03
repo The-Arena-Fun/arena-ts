@@ -5,6 +5,8 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import BattleLogo from '@/app/assets/logos/battlelogo.png'
+import Twitter from '@/app/assets/logos/twitter.png'
+import './blob.css'
 import Link from "next/link";
 
 export function JoinGame() {
@@ -13,15 +15,28 @@ export function JoinGame() {
     router.push('/game')
   }
   return (
-    <div className="flex flex-1 flex-col gap-y-4 w-full items-center">
+    <div className="flex flex-1 flex-col gap-y-4 w-full items-center mt-[-70px]">
+      <Link
+        target="_blank"
+        href="https://x.com/TheArenaDotFun"
+        className="btn-gray  absolute top-[20px] right-[20px]"
+      >
+        <Image
+          className="h-[14px] w-[18px]"
+          src={Twitter}
+          alt={`twitter`}
+          priority
+        />
+      </Link>
       <Image
-        className="h-[100px] w-[100px]"
+        className="h-[60px] w-[60px] mb-5"
         src={BattleLogo}
         alt={`battlelogo`}
         priority
       />
+
       < div className="w-full sm:max-w-lg max-w-md rounded-md border-2 border-[#28323C] p-6 flex flex-1 flex-col gap-y-4" >
-        <Button className="flex flex-1 bg-[#6031C3] text-white py-4 hover:text-black"
+        <Button className="flex flex-1 bg-[#0A0C0F] text-white border-2 border-[#28323C] py-4 hover:text-black"
           onClick={onJoin}
           disabled
         >
@@ -40,9 +55,28 @@ export function JoinGame() {
       <Link
         target="_blank"
         href="https://docs.google.com/forms/d/e/1FAIpQLSdmkgeIi-Rtrwk5ntlwOlSZYYaHdRDe37RT7IqL4ktE_rSL0A/viewform"
+        className="btn"
       >
-        <p className="text-sm underline">Join waitlist</p>
+        <p className="text-sm uppercase">Join waitlist</p>
       </Link>
+      <div class="bottom">
+        <div class="blob">
+          <div class="circle circle1"></div>
+          <div class="circle circle2"></div>
+          <div class="circle circle3"></div>
+          <div class="circle circle4"></div>
+          <div class="circle circle5"></div>
+        </div>
+      </div>
+      <div className="lines">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div >
   )
 }
