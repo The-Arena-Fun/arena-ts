@@ -18,7 +18,7 @@ export function JoinGame() {
     <div className="flex flex-1 flex-col gap-y-4 w-full items-center mt-[-70px]">
       <Link
         target="_blank"
-        href="https://twitter.com"
+        href="https://x.com/TheArenaDotFun"
         className="btn-gray  absolute top-[20px] right-[20px]"
       >
         <Image
