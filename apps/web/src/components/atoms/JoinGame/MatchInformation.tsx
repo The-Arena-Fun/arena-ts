@@ -1,3 +1,4 @@
+import { useMatchDefaultConfig } from "@/hooks/match/useMatchDefaultConfig";
 import { InfoItem, InfoItemSeperator } from "./InfoItem";
 
 type MatchInformationProps = {
@@ -21,5 +22,10 @@ export function MatchInformation(props: MatchInformationProps) {
 }
 
 export function MVPMatchInformation() {
-  return <MatchInformation betAmount={10} tradingAmount={50} />
+  const matchConfigQuery = useMatchDefaultConfig();
+  return (
+    <MatchInformation
+      betAmount={matchConfigQuery.data?.individual_wage_amount ?? 10}
+      tradingAmount={matchConfigQuery.data?.individual_trade_amount ?? 50} />
+  )
 }
