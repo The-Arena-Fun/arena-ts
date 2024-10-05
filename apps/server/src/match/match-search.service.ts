@@ -63,8 +63,8 @@ export class MatchSearchService implements OnModuleInit, OnModuleDestroy {
     return {
       game_type: 'one_vs_one',
       token: usdc,
-      individual_wage_amount: 50,
-      individual_trade_amount: 150,
+      individual_wage_amount: 10,
+      individual_trade_amount: 50,
     }
   }
 
