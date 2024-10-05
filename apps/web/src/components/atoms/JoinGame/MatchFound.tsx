@@ -3,7 +3,8 @@
 import React, { useMemo } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 
-import ExampleAvatar from '@/app/assets/images/example-avatar.png'
+import ExampleAvatarA from '@/app/assets/images/example-avatar.png'
+import ExampleAvatarB from '@/app/assets/images/example-avatar-1.png'
 import { Button } from '@/components/ui/button';
 import { useMatchMakingContext } from '@/components/atoms/JoinGame/MatchMakingProvider';
 import { MatchOpponent } from '@/components/atoms/JoinGame/MatchOpponent';
@@ -14,12 +15,18 @@ export function MatchFound() {
   const { activeMatchQuery, declineMatch, onCancel, onDecline } = useMatchMakingContext()
   const { publicKey } = useWallet()
 
+  const avatarA = publicKey?.toString() === process.env.NEXT_PUBLIC_TRADER_A as string
+    ? ExampleAvatarA : ExampleAvatarB
+
+  const avatarB = publicKey?.toString() === process.env.NEXT_PUBLIC_TRADER_A as string
+    ? ExampleAvatarB : ExampleAvatarA
+
   const requiredDepositAmount = useMemo(() => {
-    const wage =activeMatchQuery.data?.match.individual_wage_amount ?? 0 
-    const trade =activeMatchQuery.data?.match.individual_trade_amount ?? 0
+    const wage = activeMatchQuery.data?.match.individual_wage_amount ?? 0
+    const trade = activeMatchQuery.data?.match.individual_trade_amount ?? 0
     return wage + trade
   }, [activeMatchQuery.data])
-  
+
   return (
     <div className="w-100% max-w-md flex flex-col flex-1 gap-y-4">
       <div className="rounded-md border border-trade-up p-6 flex flex-1 flex-col gap-y-4">
@@ -28,10 +35,11 @@ export function MatchFound() {
         </p>
         <div className="flex flex-row items-center justify-center gap-x-4 py-4">
           <MatchOpponent
-            image={ExampleAvatar}
+            image={avatarA}
             label={shortenAddress(publicKey?.toBase58())} />
           <p>vs</p>
           <MatchOpponent
+            image={avatarB}
             label={shortenAddress(activeMatchQuery.data?.opponent?.pubkey)} />
         </div>
         <MVPMatchInformation />

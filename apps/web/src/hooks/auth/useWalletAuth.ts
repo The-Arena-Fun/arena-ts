@@ -60,7 +60,8 @@ export function useWalletAuth() {
     onDisconnect,
     onConnect,
     displayUsername,
-    connected: debouncedWalletConnected
+    connected: debouncedWalletConnected,
+    publicKey: wallet.publicKey
   }
 }
 
