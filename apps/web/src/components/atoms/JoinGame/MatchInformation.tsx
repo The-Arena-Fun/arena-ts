@@ -8,18 +8,18 @@ type MatchInformationProps = {
 export function MatchInformation(props: MatchInformationProps) {
   const { betAmount, tradingAmount } = props;
   return (
-    <div className="flex flex-1 flex-row justify-between items-center">
-      <InfoItem heading="Bet amount" description={`$${betAmount}`} />
+    <div className="flex flex-1 flex-row justify-between items-center px-2">
+      <InfoItem heading="Wager" description={`$${betAmount}`} />
       <InfoItemSeperator />
       <InfoItem heading="Trading" description={`$${tradingAmount}`} />
       <InfoItemSeperator />
-      <InfoItem heading="Game mode" description="First to 2x" />
+      <InfoItem heading="Mode" description="2x PnL" />
       <InfoItemSeperator />
-      <InfoItem heading="Time limit" description="24 hours" />
+      <InfoItem heading="Time limit" description="24 hrs" />
     </div>
   )
 }
 
 export function MVPMatchInformation() {
-  return <MatchInformation betAmount={100} tradingAmount={150} />
+  return <MatchInformation betAmount={10} tradingAmount={50} />
 }
