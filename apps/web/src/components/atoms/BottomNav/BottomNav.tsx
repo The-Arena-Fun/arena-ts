@@ -19,11 +19,11 @@ export function BottomNav(props: BottomNavProps) {
   return (
     <div className='fixed mx-auto flex self-center rounded-xl border p-4 mb-8 bottom-0 flex-grow-0 justify-between items-center bg-background gap-x-4'>
       <div className='flex flex-row gap-x-2'>
-        <Button variant={overviewButtonVariant} size="lg" className="py-6" onClick={onOverviewSelected}>
-          Overview
-        </Button>
         <Button variant={tradeButtonVariant} size="lg" className="py-6" onClick={onTradesSelected}>
           Trade
+        </Button>
+        <Button variant={overviewButtonVariant} size="lg" className="py-6" onClick={onOverviewSelected}>
+          Overview
         </Button>
       </div>
       <div className='flex flex-row gap-x-8'>
