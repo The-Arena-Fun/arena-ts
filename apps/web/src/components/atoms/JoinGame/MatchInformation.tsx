@@ -16,7 +16,7 @@ export function MatchInformation(props: MatchInformationProps) {
       <InfoItemSeperator />
       <InfoItem heading="Mode" description="2x PnL" />
       <InfoItemSeperator />
-      <InfoItem heading="Time limit" description="24 hrs" />
+      <InfoItem heading="Time" description="24 hrs" />
     </div>
   )
 }

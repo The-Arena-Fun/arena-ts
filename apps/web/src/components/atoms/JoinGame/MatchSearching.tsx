@@ -2,8 +2,11 @@
 
 import React from 'react';
 
+import { Button } from '@/components/ui/button';
 import ExampleAvatarA from '@/app/assets/images/example-avatar.png'
 import ExampleAvatarB from '@/app/assets/images/example-avatar-1.png'
+import LinkIcon from '@/app/assets/svgs/link.svg'
+import Image from 'next/image';
 import { useMatchMakingContext } from '@/components/atoms/JoinGame/MatchMakingProvider';
 import { MatchOpponent } from '@/components/atoms/JoinGame/MatchOpponent';
 import { MVPMatchInformation } from '@/components/atoms/JoinGame/MatchInformation';
@@ -31,6 +34,10 @@ export function MatchSearching() {
           <MatchOpponent />
         </div>
         <MVPMatchInformation />
+        <Button variant="outline" className='self-center'>
+          <Image src={LinkIcon} alt='link' className='mr-2 ' />
+          INVITE FRENS TO JOIN
+        </Button>
       </div>
       <button
         className="text-xs flex self-center text-gray-500"
