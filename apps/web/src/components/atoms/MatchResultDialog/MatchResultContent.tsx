@@ -1,10 +1,11 @@
 'use client';
 
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import ExampleAvatar from '@/app/assets/images/example-avatar.png'
-import ExampleAvatar2 from '@/app/assets/images/example-avatar-2.png'
-import TwitterLogo from '@/app/assets/svgs/twitter.svg'
+import Image from 'next/image';
+import ExampleAvatar from '@/app/assets/images/example-avatar.png';
+import BattleLogo from '@/app/assets/logos/battlelogo.png';
+import ExampleAvatar2 from '@/app/assets/images/example-avatar-2.png';
+import TwitterLogo from '@/app/assets/svgs/twitter.svg';
 import { MatchResultOpponent } from './MatchResultOpponent';
 
 export function MatchResultContent() {
@@ -21,7 +22,7 @@ export function MatchResultContent() {
           VS
         </p>
         <p className="text-center text-sm">
-          BURGERMADS
+          BURGERBOB
         </p>
       </div>
       <div className="rounded-lg border border-[#28323C] flex flex-1 flex-col gap-y-4">
@@ -29,10 +30,11 @@ export function MatchResultContent() {
           <MatchResultOpponent
             winner
             image={ExampleAvatar} />
-          <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+          <Image src={BattleLogo} alt='battleLogo' className='w-7 h-7 mt-4' />
+          {/* <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
+          </svg> */}
           <MatchResultOpponent
             image={ExampleAvatar2} />
         </div>
