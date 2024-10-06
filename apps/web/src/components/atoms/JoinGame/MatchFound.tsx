@@ -10,9 +10,10 @@ import { useMatchMakingContext } from '@/components/atoms/JoinGame/MatchMakingPr
 import { MatchOpponent } from '@/components/atoms/JoinGame/MatchOpponent';
 import { MVPMatchInformation } from '@/components/atoms/JoinGame/MatchInformation';
 import { shortenAddress } from '@/utils/strings';
+import { MatchFoundCTAs } from './MatchFoundCTAs';
 
 export function MatchFound() {
-  const { activeMatchQuery, declineMatch, onCancel, onDecline } = useMatchMakingContext()
+  const { activeMatchQuery, } = useMatchMakingContext()
   const { publicKey } = useWallet()
 
   const avatarA = publicKey?.toString() === process.env.NEXT_PUBLIC_TRADER_A as string
@@ -44,22 +45,7 @@ export function MatchFound() {
         </div>
         <MVPMatchInformation />
       </div>
-      <button
-        className="text-xs flex flex-1 text-center text-gray-500 border-trade-up bg-trade-up"
-        onClick={onCancel}>
-
-      </button>
-      <Button
-        variant='up'
-        onClick={onDecline}>
-        Deposit ${requiredDepositAmount}
-      </Button>
-      <Button
-        variant='ghost'
-        isLoading={declineMatch.isPending}
-        onClick={onDecline}>
-        Decline
-      </Button>
+      <MatchFoundCTAs />
     </div>
   )
 }
