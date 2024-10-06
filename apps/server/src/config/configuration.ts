@@ -19,8 +19,8 @@ export default () => ({
   },
   game: {
     defaultTokenName: process.env.GAME_CONFIG_DEFAULT_TOKEN_NAME || 'USDC',
-    defaultWageAmount: 50,
-    defaultTradeAmount: 150,
+    defaultWageAmount: 10,
+    defaultTradeAmount: 50,
     // Devnet only
     usdcTreasury: process.env.GAME_CONFIG_USDC_TREASURY_PRIVATE_KEY || 'PRIVATE_KEY',
     usdcTreasuryMint: process.env.GAME_CONFIG_USDC_TREASURY_MINT || 'MINT'
