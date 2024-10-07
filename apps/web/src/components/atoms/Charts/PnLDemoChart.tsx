@@ -1,13 +1,15 @@
 'use client';
 
 import React, { ReactElement } from 'react'
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, DotProps } from 'recharts'
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "../../ui/avatar"
 
 import ExampleAvatar from '@/app/assets/images/example-avatar.png'
-import ExampleAvatar2 from '@/app/assets/images/example-avatar-2.png'
+import ExampleAvatar2 from '@/app/assets/images/example-avatar-1.png'
+import Winner from '@/app/assets/svgs/winner.svg'
+
 
 const data = [
   { time: 0, DUMPLING: 1, BURGERBOB: 1 },
@@ -76,6 +78,7 @@ export function PnLDemoChart() {
                   {...props}
                   isLastItem={props.index === data.length - 1}
                   avatar={ExampleAvatar}
+                  pfp={"dumpling"}
                 />
               )} />
             <Line
@@ -111,12 +114,19 @@ const ChartAvatar = (props: DotProps & {
   size?: number;
   avatar: StaticImageData;
   isLastItem: boolean
+  pfp?: string
 }): ReactElement<SVGElement> | undefined => {
   const { size = 32, cx = 0, cy = 0, avatar } = props;
   if (!props.isLastItem) return undefined
   return (
-    <svg x={cx - (24 / 2)} y={cy - (size / 2)} width={size} height={size}>
-      <image href={avatar.src} height={size} width={size} />
-    </svg>
+    <> {props.pfp === "dumpling" &&
+      <svg x={cx - (18 / 2)} y={cy - (70 / 2)} width={size * 0.8} height={size * 0.8}>
+        <image href={Winner.src} height={size * 0.8} width={size * 0.8} />
+      </svg>
+    }
+      <svg x={cx - (24 / 2)} y={cy - (size / 2)} width={size} height={size}>
+        <image href={avatar.src} height={size} width={size} />
+      </svg>
+    </>
   )
 };
