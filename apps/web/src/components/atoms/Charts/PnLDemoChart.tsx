@@ -21,8 +21,8 @@ const CustomTooltip = ({ active, payload }: any) => {
     return (
       <Card className="bg-gray-900 border-gray-800">
         <CardContent className="p-2 text-xs">
-          <p className="text-white">1 BURGERBOB = {data.BURGERBOB.toFixed(3)} DUMPLING</p>
-          <p className="text-green-400">PNL: +13%</p>
+          <p className="text-green-400">BURGERBOB = {data.BURGERBOB.toFixed(3)}</p>
+          <p className="text-cyan-400">DUMPLING = {data.DUMPLING.toFixed(3)}</p>
         </CardContent>
       </Card>
     )
@@ -46,18 +46,18 @@ export function PnLDemoChart() {
       <div className="flex-grow">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} >
-            <CartesianGrid stroke="#FFFFFF0B"/>
-            <XAxis 
-              dataKey="time" 
+            <CartesianGrid stroke="#FFFFFF0B" />
+            <XAxis
+              dataKey="time"
               stroke="#4B5563"
               tickFormatter={(value) => value === 0 ? 'START' : value === 24 ? 'END' : `${value} HOURS`}
               points='a'
               className="text-xs"
             />
-            <YAxis 
-              stroke="#4B5563" 
+            <YAxis
+              stroke="#4B5563"
               domain={[1, 2]}
-              ticks={[1, 1.25, 1.5, 1.75, 2]} 
+              ticks={[1, 1.25, 1.5, 1.75, 2]}
               tickFormatter={(value) => `${value}x`}
               className="text-xs"
             />
