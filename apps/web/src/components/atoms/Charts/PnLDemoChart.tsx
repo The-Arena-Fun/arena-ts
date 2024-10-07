@@ -120,7 +120,7 @@ const ChartAvatar = (props: DotProps & {
   if (!props.isLastItem) return undefined
   return (
     <> {props.pfp === "dumpling" &&
-      <svg x={cx - (18 / 2)} y={cy - (70 / 2)} width={size * 0.8} height={size * 0.8}>
+      <svg x={cx - (18 / 2)} y={cy - (60 / 2)} width={size * 0.8} height={size * 0.8}>
         <image href={Winner.src} height={size * 0.8} width={size * 0.8} />
       </svg>
     }
