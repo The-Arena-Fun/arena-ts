@@ -7,7 +7,7 @@ import Winner from '@/app/assets/svgs/winner.svg'
 
 type MatchResultOpponentProps = {
   winner?: boolean;
-  image?: StaticImageData;
+  image?: string;
   label?: string;
 }
 
@@ -23,7 +23,7 @@ export function MatchResultOpponent(props: MatchResultOpponentProps) {
   const avatar = useMemo(() => {
     const commonStyleClasses = 'w-24 h-24 bg-gray-800 rounded-full'
     if (image) {
-      return <Image src={image} alt='avatar' className={commonStyleClasses} />
+      return <img src={image} alt='avatar' className={commonStyleClasses} />
     }
     return <div className={commonStyleClasses} />
   }, [image])
