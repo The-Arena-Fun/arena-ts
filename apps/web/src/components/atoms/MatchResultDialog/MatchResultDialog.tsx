@@ -12,7 +12,7 @@ export function MatchResultDialog() {
 
   return (
     <>
-      <Button onClick={() => setIsOpen(true)}>Open dialog</Button>
+      {/* <Button onClick={() => setIsOpen(true)}>Open dialog</Button> */}
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
         <DialogBackdrop
           transition
