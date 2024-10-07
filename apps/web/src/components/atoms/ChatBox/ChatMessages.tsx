@@ -6,7 +6,7 @@ import { ChatMessageItem } from './ChatMessageItem'
 export function ChatMessages() {
   const messagesQuery = useChatMessages()
   return (
-    <div className="w-full flex flex-1 flex-col gap-y-4 overflow-y-scroll">
+    <div className="w-full flex flex-1 flex-col gap-y-4 overflow-y-auto">
       {messagesQuery.data?.map((item, index) => (
         <ChatMessageItem
           key={index.toString()}
