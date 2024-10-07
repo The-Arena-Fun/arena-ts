@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${protoMono.variable} antialiased min-h-screen flex flex-col font-[family-name:var(--font-proto-mono)]`}
       >
         <Providers>
-          <Toaster position={"bottom-left"} />
+          <Toaster position={"bottom-left"} duration={5000} />
           <NavHeader />
           <div className="w-full px-8 flex flex-1">
             {children}
