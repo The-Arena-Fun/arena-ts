@@ -14,6 +14,8 @@ import { TradePosition, useTradePositions } from "@/hooks/trades/useTradePositio
 import { PriceDirection } from "../PriceDirection"
 import { usePlaceDriftTradeOrder } from "@/hooks/trades/usePlaceDriftTradeOrder";
 import { toast } from "sonner";
+import ExampleAvatar from '@/app/assets/images/example-avatar.png'
+import ExampleAvatar1 from '@/app/assets/images/example-avatar-1.png'
 
 export function TradePositions() {
   const tradePositionsQuery = useTradePositions();
@@ -21,6 +23,7 @@ export function TradePositions() {
     <Table>
       <TableHeader>
         <TableRow>
+          <TableHead>Trader</TableHead>
           <TableHead>Type</TableHead>
           <TableHead>Coin</TableHead>
           <TableHead>Entry</TableHead>
@@ -64,6 +67,15 @@ function TradePositionRow(props: TradePositionRowProps) {
   const tradeDirectionLabel = position.type === 'up' ? 'Long' : 'Short'
   return (
     <TableRow className="bg-[#10141C]">
+      <TableCell>
+        <div className="flex flex-row items-center gap-x-1">
+          <Image
+            src={position.person === "dumpling" ? ExampleAvatar : ExampleAvatar1}
+            width={30}
+            height={30}
+            alt={"person"} />
+        </div>
+      </TableCell>
       <TableCell>
         <div className="flex flex-row items-center gap-x-1">
           <PriceDirection size={10} priceDirection={position.type} />
