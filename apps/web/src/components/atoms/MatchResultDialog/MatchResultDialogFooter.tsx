@@ -6,18 +6,18 @@ export function MatchResultDialogFooter() {
       <div className='flex flex-row gap-x-8'>
         <div className='flex flex-col gap-y-1'>
           <p className='text-gray-600 text-xs'>
-            Total won
+            Total lost
           </p>
-          <p className='text-trade-up text-base'>
-            +$400
+          <p className='text-trade-down text-base'>
+            -$25
           </p>
         </div>
         <div className='flex flex-col gap-y-1'>
           <p className='text-gray-600 text-xs'>
             Trading PnL
           </p>
-          <p className='text-trade-up text-base'>
-            +$323
+          <p className='text-trade-down text-base'>
+            -30%
           </p>
         </div>
       </div>

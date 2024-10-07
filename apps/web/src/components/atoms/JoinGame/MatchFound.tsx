@@ -11,15 +11,18 @@ import { MatchOpponent } from '@/components/atoms/JoinGame/MatchOpponent';
 import { MVPMatchInformation } from '@/components/atoms/JoinGame/MatchInformation';
 import { shortenAddress } from '@/utils/strings';
 import { MatchFoundCTAs } from './MatchFoundCTAs';
+import { useMe } from '@/hooks/auth/useMe';
 
 export function MatchFound() {
   const { activeMatchQuery, } = useMatchMakingContext()
   const { publicKey } = useWallet()
+  // const { data } = useMe()
+  // console.log("data", data?.pfp)
 
-  const avatarA = publicKey?.toString() === process.env.NEXT_PUBLIC_TRADER_A as string
+  const avatarA = publicKey?.toString() === "GmmK8Yh7LWCHLnMzqNt7yLz17cX7JfrP7bXppHquXrDY"
     ? ExampleAvatarA : ExampleAvatarB
 
-  const avatarB = publicKey?.toString() === process.env.NEXT_PUBLIC_TRADER_A as string
+  const avatarB = publicKey?.toString() === "GmmK8Yh7LWCHLnMzqNt7yLz17cX7JfrP7bXppHquXrDY"
     ? ExampleAvatarB : ExampleAvatarA
 
   const requiredDepositAmount = useMemo(() => {

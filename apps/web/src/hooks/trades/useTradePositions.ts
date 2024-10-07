@@ -35,6 +35,7 @@ export function useTradePositions() {
     queryKey: [QUERY_KEY, matchId, meQuery.data?.id],
     queryFn: () => [
       MOCK_WIF_TRADE_POSITION,
+      MOCK_SOL_TRADE_POSITION
     ],
     // queryFn: async () => {
     //   if (!meQuery.data?.id) throw new Error('User is not logged in')
@@ -65,15 +66,16 @@ useTradePositions.queryKey = QUERY_KEY
 
 const MOCK_SOL_TRADE_POSITION: TradePosition = {
   type: 'up',
+  person: "burgerbob",
   coin: {
     image: SolTickerImage,
     ticker: 'SOL'
   },
-  entry: '142.3232',
-  betAmount: '100',
+  entry: '142',
+  betAmount: '20',
   bustPrice: '140.3212',
-  multiplier: '7x',
-  pnl: '$145 / 30%'
+  multiplier: '10x',
+  pnl: '$24 / 20%'
 }
 
 const MOCK_BONK_TRADE_POSITION: TradePosition = {
@@ -97,9 +99,9 @@ const MOCK_WIF_TRADE_POSITION: TradePosition = {
     image: WifTickerImage,
     ticker: 'WIF'
   },
-  entry: '2.1',
-  betAmount: '120',
-  bustPrice: '1.98',
+  entry: '2.2',
+  betAmount: '20',
+  bustPrice: '2',
   multiplier: '4x',
-  pnl: '$200 / 12%'
+  pnl: '$22 / 10%'
 }
