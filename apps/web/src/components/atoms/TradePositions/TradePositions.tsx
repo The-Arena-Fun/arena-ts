@@ -12,6 +12,8 @@ import {
 import { Button } from "@/components/ui/button"
 import { TradePosition, useTradePositions } from "@/hooks/trades/useTradePositions"
 import { PriceDirection } from "../PriceDirection"
+import { usePlaceDriftTradeOrder } from "@/hooks/trades/usePlaceDriftTradeOrder";
+import { toast } from "sonner";
 
 export function TradePositions() {
   const tradePositionsQuery = useTradePositions();
@@ -22,9 +24,7 @@ export function TradePositions() {
           <TableHead>Type</TableHead>
           <TableHead>Coin</TableHead>
           <TableHead>Entry</TableHead>
-          <TableHead>Bet amount</TableHead>
-          <TableHead>Bust price</TableHead>
-          <TableHead>Multiplier</TableHead>
+          <TableHead>Amount</TableHead>
           <TableHead>Funding / H</TableHead>
           <TableHead>PnL</TableHead>
           <TableHead className="text-right w-[10%]" />
@@ -48,6 +48,17 @@ type TradePositionRowProps = {
 
 function TradePositionRow(props: TradePositionRowProps) {
   const { position } = props;
+  const { mutateAsync, isPending } = usePlaceDriftTradeOrder()
+  const onClose = async () => {
+    const tx = await mutateAsync([
+      Number(position.betAmount),
+      position.type === "down" ? "up" : "down"
+    ])
+    toast(
+      `Trade filled`,
+      { action: { label: 'View on solscan', onClick: () => window.open(`https://solscan.io/tx/${tx}`, '_blank') } }
+    )
+  }
 
   const tradeDirectionColorClass = position.type === 'up' ? 'text-trade-up' : 'text-trade-down'
   const tradeDirectionLabel = position.type === 'up' ? 'Long' : 'Short'
@@ -74,13 +85,7 @@ function TradePositionRow(props: TradePositionRowProps) {
         <p className="text-sm text-white">{position.entry}</p>
       </TableCell>
       <TableCell>
-        <p className="text-sm text-white">${position.betAmount}</p>
-      </TableCell>
-      <TableCell>
-        <p className="text-sm text-white">{position.bustPrice}</p>
-      </TableCell>
-      <TableCell>
-        <p className="text-sm text-white">{position.multiplier}</p>
+        <p className="text-sm text-white">{position.betAmount} ${position.coin.ticker}</p>
       </TableCell>
       <TableCell>
         <p className="text-sm text-white">{position.fundingRate ?? '--'}</p>
@@ -89,7 +94,7 @@ function TradePositionRow(props: TradePositionRowProps) {
         <p className={`text-sm ${tradeDirectionColorClass}`}>{position.pnl}</p>
       </TableCell>
       <TableCell>
-        <Button variant="secondary">
+        <Button isLoading={isPending} variant="secondary" onClick={onClose}>
           Close
         </Button>
       </TableCell>
