@@ -35,12 +35,39 @@ export class ProfileRouter {
       amount: z.number()
     })).mutation(async ({ ctx, input }) => {
       const config = await this.match.getDefaultGameConfig()
-      const tx = await this.balance.splTransferTx({
+      const instructions = await this.balance.splTransferIxs({
         from: ctx.user.pubkey,
         to: ctx.user.walletKeypair.publicKey,
         mint: new PublicKey(config.token.token_pubkey),
         uiAmount: input.amount
       })
+      const tx = await this.balance.txFromIxs({
+        instructions,
+        payer: ctx.user.pubkey
+      })
+      const serialized = Buffer.from(tx.serialize()).toString("base64")
+      return {
+        tx: {
+          serialized
+        }
+      }
+    }),
+    withdraw: this.trpc.protectedProcedure.input(z.object({
+      amount: z.number()
+    })).mutation(async ({ ctx, input }) => {
+      const config = await this.match.getDefaultGameConfig()
+      const instructions = await this.balance.splTransferIxs({
+        from: ctx.user.walletKeypair.publicKey,
+        to: ctx.user.pubkey,
+        mint: new PublicKey(config.token.token_pubkey),
+        uiAmount: input.amount,
+        payer: ctx.user.pubkey
+      })
+      const tx = await this.balance.txFromIxs({
+        instructions,
+        payer: ctx.user.pubkey
+      })
+      tx.sign([ctx.user.walletKeypair])
       const serialized = Buffer.from(tx.serialize()).toString("base64")
       return {
         tx: {
