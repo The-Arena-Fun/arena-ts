@@ -28,7 +28,8 @@ export class ProfileRouter {
     me: this.trpc.protectedProcedure.query(({ ctx }) => ({
       id: ctx.user.id,
       pubkey: ctx.user.pubkey.toBase58(),
-      wallet_address: ctx.user.walletKeypair.publicKey.toBase58()
+      wallet_address: ctx.user.walletKeypair.publicKey.toBase58(),
+      pfp: ctx.user.pfp
     })),
     deposit: this.trpc.protectedProcedure.input(z.object({
       amount: z.number()

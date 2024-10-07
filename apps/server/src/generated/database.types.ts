@@ -34,6 +34,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      match_balance_feed: {
+        Row: {
+          balance: number
+          id: string
+          participant_id: string
+          timestamp: string
+        }
+        Insert: {
+          balance: number
+          id?: string
+          participant_id: string
+          timestamp?: string
+        }
+        Update: {
+          balance?: number
+          id?: string
+          participant_id?: string
+          timestamp?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "match_balance_feed_participant_id_fkey"
+            columns: ["participant_id"]
+            isOneToOne: false
+            referencedRelation: "match_participants"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "match_balance_feed_participant_id_fkey"
+            columns: ["participant_id"]
+            isOneToOne: false
+            referencedRelation: "match_participants_view"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       match_messages: {
         Row: {
           created_at: string
@@ -193,18 +229,21 @@ export type Database = {
         Row: {
           created_at: string
           id: string
+          pfp: string | null
           pubkey: string
           wallet_private_key: string
         }
         Insert: {
           created_at?: string
           id?: string
+          pfp?: string | null
           pubkey: string
           wallet_private_key: string
         }
         Update: {
           created_at?: string
           id?: string
+          pfp?: string | null
           pubkey?: string
           wallet_private_key?: string
         }

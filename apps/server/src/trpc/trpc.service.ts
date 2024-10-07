@@ -13,6 +13,7 @@ export interface TrpcContext {
     id: string;
     pubkey: PublicKey;
     walletKeypair: Keypair;
+    pfp?: string;
   };
 }
 
@@ -48,7 +49,8 @@ export class TrpcService {
         user: {
           id: user.id,
           pubkey: new PublicKey(user.pubkey),
-          walletKeypair: Keypair.fromSecretKey(bs58.decode(user.wallet_private_key))
+          walletKeypair: Keypair.fromSecretKey(bs58.decode(user.wallet_private_key)),
+          pfp: user.pfp!
         }
       }
     } catch {

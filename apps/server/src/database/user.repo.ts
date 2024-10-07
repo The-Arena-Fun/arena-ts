@@ -15,11 +15,17 @@ export class UserRepository {
   public async create(inputs: {
     pubkey: PublicKey
   }) {
+    const pfp_url = inputs.pubkey.toString() === "GmmK8Yh7LWCHLnMzqNt7yLz17cX7JfrP7bXppHquXrDY" ?
+      // dumpling
+      "https://pbs.twimg.com/profile_images/1776337353306415104/3aICr3qw_400x400.png" :
+      // bob
+      "https://pbs.twimg.com/profile_images/1740125899163328512/Z_lShBa6_400x400.jpg"
     const results = await this.database.supabase
       .from('users')
       .insert({
         pubkey: inputs.pubkey.toBase58(),
         wallet_private_key: this.wallet.generatePrivateKey(),
+        pfp: pfp_url
       })
       .select()
       .single()
