@@ -10,15 +10,26 @@ import ExampleAvatar from '@/app/assets/images/example-avatar.png'
 import ExampleAvatar2 from '@/app/assets/images/example-avatar-1.png'
 import Winner from '@/app/assets/svgs/winner.svg'
 
+// 10 min
+// const data = [
+//   { time: 0, DUMPLING: 1, BURGERBOB: 1 },
+//   { time: 10, DUMPLING: 1.1, BURGERBOB: 1.2 },
+//   { time: 20, DUMPLING: 1, BURGERBOB: 1 },
+//   { time: 30, DUMPLING: 1, BURGERBOB: 1 },
+//   { time: 40, DUMPLING: 1, BURGERBOB: 1 },
+//   { time: 50, DUMPLING: 1, BURGERBOB: 1 },
+//   { time: 60, DUMPLING: 1, BURGERBOB: 1 },
+// ]
 
+// Final
 const data = [
   { time: 0, DUMPLING: 1, BURGERBOB: 1 },
   { time: 10, DUMPLING: 1.1, BURGERBOB: 1.2 },
   { time: 20, DUMPLING: 1.2, BURGERBOB: 1.3 },
   { time: 30, DUMPLING: 1.3, BURGERBOB: 1.5 },
   { time: 40, DUMPLING: 1.2, BURGERBOB: 1.7 },
-  { time: 50, DUMPLING: 1.2, BURGERBOB: 1.2 },
-  { time: 60, DUMPLING: 2, BURGERBOB: 1.1 },
+  { time: 50, DUMPLING: 2, BURGERBOB: 1.5 },
+  { time: 60, DUMPLING: 2, BURGERBOB: 0.7 },
 ]
 
 const CustomTooltip = ({ active, payload }: any) => {
