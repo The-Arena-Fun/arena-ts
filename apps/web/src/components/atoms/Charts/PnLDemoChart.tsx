@@ -13,12 +13,12 @@ import Winner from '@/app/assets/svgs/winner.svg'
 
 const data = [
   { time: 0, DUMPLING: 1, BURGERBOB: 1 },
-  { time: 4, DUMPLING: 1.2, BURGERBOB: 1.3 },
-  { time: 8, DUMPLING: 1.4, BURGERBOB: 1.5 },
-  { time: 12, DUMPLING: 1.3, BURGERBOB: 1.7 },
-  { time: 16, DUMPLING: 1.5, BURGERBOB: 1.4 },
-  { time: 20, DUMPLING: 1.4, BURGERBOB: 1.2 },
-  { time: 24, DUMPLING: 1.6, BURGERBOB: 1.1 },
+  { time: 10, DUMPLING: 1.1, BURGERBOB: 1.2 },
+  { time: 20, DUMPLING: 1.2, BURGERBOB: 1.3 },
+  { time: 30, DUMPLING: 1.3, BURGERBOB: 1.5 },
+  { time: 40, DUMPLING: 1.2, BURGERBOB: 1.7 },
+  { time: 50, DUMPLING: 1.2, BURGERBOB: 1.2 },
+  { time: 60, DUMPLING: 2, BURGERBOB: 1.1 },
 ]
 
 const CustomTooltip = ({ active, payload }: any) => {
@@ -56,7 +56,7 @@ export function PnLDemoChart() {
             <XAxis
               dataKey="time"
               stroke="#4B5563"
-              tickFormatter={(value) => value === 0 ? 'START' : value === 24 ? 'END' : `${value} HOURS`}
+              tickFormatter={(value) => value === 0 ? 'START' : value === 24 ? 'END' : `${value} MINS`}
               points='a'
               className="text-xs"
             />
