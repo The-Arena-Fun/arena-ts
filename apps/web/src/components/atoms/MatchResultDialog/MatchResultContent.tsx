@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import ExampleAvatar from '@/app/assets/images/example-avatar.png';
 import BattleLogo from '@/app/assets/logos/battlelogo.png';
-import ExampleAvatar2 from '@/app/assets/images/example-avatar-2.png';
+import ExampleAvatar1 from '@/app/assets/images/example-avatar-1.png';
 import TwitterLogo from '@/app/assets/svgs/twitter.svg';
 import { MatchResultOpponent } from './MatchResultOpponent';
 
@@ -36,7 +36,7 @@ export function MatchResultContent() {
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg> */}
           <MatchResultOpponent
-            image={ExampleAvatar2} />
+            image={ExampleAvatar1} />
         </div>
         <div className='border-t py-4 flex flex-col items-center justify-center'>
           <p className='text-xs mb-1'>

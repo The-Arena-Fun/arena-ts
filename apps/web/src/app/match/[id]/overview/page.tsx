@@ -5,7 +5,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { TradePositions } from "@/components/atoms/TradePositions/TradePositions";
 
 import ExampleAvatar from '@/app/assets/images/example-avatar.png'
-import ExampleAvatar2 from '@/app/assets/images/example-avatar-2.png'
+import ExampleAvatar1 from '@/app/assets/images/example-avatar-1.png'
 import { BottomNav } from "@/components/atoms/BottomNav/BottomNav";
 
 export default function PnLDemoPage() {
@@ -25,7 +25,7 @@ export default function PnLDemoPage() {
               label="Dumpling"
             />
             <OpponentInventory
-              avatar={ExampleAvatar2}
+              avatar={ExampleAvatar1}
               label="Burgerbob"
             />
           </CollapsibleTrigger>
@@ -52,4 +52,4 @@ function OpponentInventory(props: OpponentInventoryProps) {
       </p>
     </div>
   )
-} 
+}
