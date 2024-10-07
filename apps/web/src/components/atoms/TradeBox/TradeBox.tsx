@@ -47,24 +47,24 @@ export function TradeBox() {
           <p className='text-base'>$1MBONK</p>
           <input
             className='text-base bg-transparent outline-none'
-            defaultValue={10000}
+            defaultValue={20}
             placeholder='Value'
             value={inputAmount ? inputAmount.toString() : ''}
             onChange={e => setInputAmount(e.target.value ? Number(e.target.value) : null)}
-            />
+          />
         </div>
       </div>
 
       {/* Leverage input */}
       <div className='flex flex-row gap-x-4'>
         <div className="flex flex-row justify-start items-center bg-[#151A22] p-4 rounded-md">
-          <p className='text-base'>x3</p>
+          <p className='text-base'>x2</p>
         </div>
         <div className="flex flex-1 flex-row justify-between items-center gap-x-4 bg-[#151A22] p-4 rounded-md">
-          <Slider defaultValue={[33]} max={100} step={1} />
+          <Slider defaultValue={[20]} max={100} step={1} />
           <div className='flex flex-col flex-shrink-0 gap-y-1'>
             <p className='text-xs text-gray-500'>Bust price</p>
-            <p className='text-xs'>142.3232</p>
+            <p className='text-xs'>0.00002</p>
           </div>
         </div>
       </div>
@@ -99,10 +99,10 @@ export function TradeBox() {
 
       <Button variant={selectedDirection} isLoading={isPending} disabled={!inputAmount} onClick={() => {
         mutateAsync([inputAmount!, selectedDirection])
-        .then(tx => toast(
-          `Trade filled`,
-          { action: { label: 'View on solscan', onClick: () => window.open(`https://solscan.io/tx/${tx}`, '_blank') } }
-        ))
+          .then(tx => toast(
+            `Trade filled`,
+            { action: { label: 'View on solscan', onClick: () => window.open(`https://solscan.io/tx/${tx}`, '_blank') } }
+          ))
       }}>
         Place trade
       </Button>
