@@ -32,7 +32,7 @@ export function BottomNav(props: BottomNavProps) {
             TIME REMAINING
           </p>
           <p className='text-white text-sm'>
-            12H 13M 11S
+            XXH XXM XXS
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button"
 import { TradePosition, useTradePositions } from "@/hooks/trades/useTradePositions"
 import { PriceDirection } from "../PriceDirection"
 
-export function TradePositions() {
+export function TradePositionsEmpty() {
   const tradePositionsQuery = useTradePositions();
   return (
     <Table>
@@ -30,15 +30,40 @@ export function TradePositions() {
           <TableHead className="text-right w-[10%]" />
         </TableRow>
       </TableHeader>
-      <TableBody>
+      {/* <TableBody>
         {tradePositionsQuery.data.map((item, index) => (
           <TradePositionRow key={index.toString()} position={item} />
         ))}
-      </TableBody>
+      </TableBody> */}
     </Table>
-
   )
 }
+
+// export function TradePositions() {
+//   const tradePositionsQuery = useTradePositions();
+//   return (
+//     <Table>
+//       <TableHeader>
+//         <TableRow>
+//           <TableHead>Type</TableHead>
+//           <TableHead>Coin</TableHead>
+//           <TableHead>Entry</TableHead>
+//           <TableHead>Bet amount</TableHead>
+//           <TableHead>Bust price</TableHead>
+//           <TableHead>Multiplier</TableHead>
+//           <TableHead>Funding / H</TableHead>
+//           <TableHead>PnL</TableHead>
+//           <TableHead className="text-right w-[10%]" />
+//         </TableRow>
+//       </TableHeader>
+//       <TableBody>
+//         {tradePositionsQuery.data.map((item, index) => (
+//           <TradePositionRow key={index.toString()} position={item} />
+//         ))}
+//       </TableBody>
+//     </Table>
+//   )
+// }
 
 // Type, Coin, Entry, Bet amount, Bust price, Multiplier, Funding / H, PNL
 

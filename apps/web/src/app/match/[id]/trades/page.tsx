@@ -2,7 +2,7 @@ import { TickersBar } from "@/components/atoms/TickersBar/TickersBar";
 import { TradeBox } from "@/components/atoms/TradeBox/TradeBox";
 import { BonkDemoChart } from "@/components/atoms/Charts/BonkDemoChart";
 import { MatchResultDialog } from "@/components/atoms/MatchResultDialog/MatchResultDialog";
-import { TradePositions } from "@/components/atoms/TradePositions/TradePositions";
+import { TradePositions, TradePositionsEmpty } from "@/components/atoms/TradePositions/TradePositions";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default async function MatchTrade({ params }: { params: { id: string } }) {
@@ -22,16 +22,17 @@ export default async function MatchTrade({ params }: { params: { id: string } })
                 <TabsTrigger value="opponent">Opponent</TabsTrigger>
               </TabsList>
               <TabsContent value="active">
-                <TradePositions />
+                <TradePositionsEmpty />
+                {/* <TradePositions /> */}
               </TabsContent>
               <TabsContent value="closed">
-                <TradePositions />
+                {/* <TradePositions /> */}
               </TabsContent>
               <TabsContent value="opponent">
                 {/* <TradePositions /> */}
               </TabsContent>
             </Tabs>
-            <div className="h-48"/>
+            <div className="h-48" />
           </div>
         </div>
         <div className="flex flex-col flex-auto w-[30%]">
