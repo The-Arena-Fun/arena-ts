@@ -30,9 +30,9 @@ export function useChatMessages() {
       }).then(messages => messages.map(message => ({
         id: message.id,
         // dumping ? dumpling : bob
-        avatar: message.user_id === 'a3b9ac66-968f-435f-833c-6a426cadee29' ? 'https://pbs.twimg.com/profile_images/1776337353306415104/3aICr3qw_400x400.png' : "https://pbs.twimg.com/profile_images/1740125899163328512/Z_lShBa6_400x400.jpg",
-        from: message.user_id === 'a3b9ac66-968f-435f-833c-6a426cadee29' ? 'DUMPLING' : 'BURGERBOB',
-        time: '6 min ago',
+        avatar: message.user_id === '0e6b2a29-2c92-4670-a3e9-031336a99a99' ? 'https://pbs.twimg.com/profile_images/1776337353306415104/3aICr3qw_400x400.png' : "https://pbs.twimg.com/profile_images/1740125899163328512/Z_lShBa6_400x400.jpg",
+        from: message.user_id === '0e6b2a29-2c92-4670-a3e9-031336a99a99' ? 'DUMPLING' : 'BURGERBOB',
+        time: 'JUST NOW',
         message: message.message
       })));
     },
